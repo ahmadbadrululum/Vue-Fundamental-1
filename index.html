@@ -10,6 +10,13 @@
         <h1>Bismillah , {{ message }}</h1>
         <button @click="makeItFun()"> Make it fun</button>
         <button v-on:click="makeItFun()"> Make it fun</button>
+
+
+        <br>
+        <!-- check message -->
+        <button @click="checkMessage()"> check message </button>
+
+        <input type="text" v-model="message">
     </div>
 
 
@@ -25,6 +32,13 @@
             methods: {
                 makeItFun() {
                     this.message = this.message + ' kuyss !!!'
+                },
+                checkMessage() {
+                    if (this.message == 'Hello World') 
+                        alert('Hello World')
+                    else 
+                        alert('Hello World kuyss !!!')
+                    
                 }
             }
         }
