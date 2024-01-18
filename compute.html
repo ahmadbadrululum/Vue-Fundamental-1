@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balajar vuejs</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" placeholder="nama" v-model="nama"> 
+        <br>
+        <input type="text" placeholder="umur" v-model="umur">
+        <h1>Saya {{ nama }}, berumur {{ umur }} itu {{ expression }}</h1>
+        <br>
+        <!-- check message -->
+
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+
+        const sample = {
+            data() {
+                return {
+                    nama: 'Badrul ',
+                    umur: '3',
+                }
+            },
+            computed: {
+                expression() {
+                    return this.umur > 18 ? 'dewasa' : 'anak-anak'
+                }
+            }
+        }
+
+        Vue.createApp(sample).mount('#app')
+    </script>
+</body>
+</html>
