@@ -8,6 +8,8 @@
 <body>
     <div id="app">
         <h1>Bismillah , {{ message }}</h1>
+        <button @click="makeItFun()"> Make it fun</button>
+        <button v-on:click="makeItFun()"> Make it fun</button>
     </div>
 
 
@@ -18,6 +20,11 @@
             data() {
                 return {
                     message: 'Hello World',
+                }
+            },
+            methods: {
+                makeItFun() {
+                    this.message = this.message + ' kuyss !!!'
                 }
             }
         }
