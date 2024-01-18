@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+        <ol v-if="status">
+            <li v-for="subject in subjects">
+                {{ subject.name }} - {{ subject.grade }}
+            </li>
+        </ol>
+
+        <table border="1" v-else>
+
+            <tr>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+
+            <tr v-for="subject in subjects" :key="subject.title">
+                <td>{{ subject.name }}</td>
+                <td>{{ subject.grade }}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const sample = {
+            data() {
+                return {
+                    subjects: [
+                        {name: 'Mathematics', grade: 90},
+                        {name: 'Physics', grade: 80},
+                        {name: 'Chemistry', grade: 70},
+                        {name: 'Biology', grade: 60},
+                        {name: 'English', grade: 50},
+                    ],
+                    status: false,
+                }
+            },
+        }
+        Vue.createApp(sample).mount('#app')
+
+    </script>
+</body>
+</html>
